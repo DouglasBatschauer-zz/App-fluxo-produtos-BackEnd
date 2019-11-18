@@ -1,0 +1,31 @@
+create database solicitacaoprodutos;
+use solicitacaoprodutos;
+
+
+create table usuarios(
+id_usuario int primary key auto_increment,
+nm_usuario varchar(25),
+user_senha varchar(25),
+user_setor varchar(35),
+user_cpf   varchar(11),
+user_logado varchar(1) default 'N'
+);
+
+
+create table produtos(
+id_produto int primary key auto_increment,
+nm_produto varchar(35),
+ds_produto varchar(45),
+preco_prod float(10,2),
+nm_resp_solic varchar(35),
+ds_obs_reprov varchar(45),
+ds_setor varchar(35),
+ds_status varchar(35) default 'Solicitacao'
+);
+
+insert into usuarios(nm_usuario,user_senha,user_setor)values('teste', 'teste123', 'Almoxarifado');
+insert into usuarios(nm_usuario,user_senha,user_setor)values('teste1', 'teste123', 'Compras');
+insert into usuarios(nm_usuario,user_senha,user_setor)values('teste2', 'teste123', 'Administracao');
+insert into produtos(nm_produto,ds_produto,nm_resp_solic)values('Papel', 'Papel para impressora', 'Douglas Batschauer');
+insert into produtos(nm_produto,ds_produto,nm_resp_solic)values('Essa Tabela Tem Paginacao', 'Acima de 5 Linhas', 'Douglas Batschauer');
+commit;
